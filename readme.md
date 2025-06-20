@@ -29,8 +29,6 @@ The pipeline used a two-stage approach combining **ColQwen2** (`vidore/colqwen2-
 
 The results were highly accurate, successfully identifying page 18 with the correct answer and extracting precise numbers:  
 
-- **Total Runtime**: 454m 12s  
-
 ![Terminal Result](images/page-18-terminal.png)
 
 It also provided exact page references for verification. 🎯
