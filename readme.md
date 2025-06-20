@@ -7,9 +7,9 @@ We rely extensively on OCR and Layout LLMs to extract relevant information from 
 To test this, I provided a 23-page PDF and asked:  
 **"Give me Computational Efficiency readings for L-Defense Llama2?"**
 
-The answer was embedded in visual charts on specific pages (page 18). For ColPali to answer effectively, it had to:
-
 ![PDF Page with Answer](images/page-18-pdf.png)
+
+The answer was embedded in visual charts on specific pages (page 18). For ColPali to answer effectively, it had to:
 
 ✅ Process the query  
 ✅ Understand the entire 23-page PDF visually  
