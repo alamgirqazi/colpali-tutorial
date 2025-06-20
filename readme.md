@@ -1,11 +1,15 @@
 # 2-Stage Retrieval Pipeline using ColPali and Vision Language Model (VLM)
 
+We rely extensively on OCR and Layout LLMs to extract relevant information from PDFs and documents, but how effective are newer architecture models like ColPali?
+
 ## Experiment
 
 To test this, I provided a 23-page PDF and asked:  
 **"Give me Computational Efficiency readings for L-Defense Llama2?"**
 
-The answer was embedded in visual charts on specific pages. For ColPali to answer effectively, it had to:
+The answer was embedded in visual charts on specific pages (page 18). For ColPali to answer effectively, it had to:
+
+![PDF Page with Answer](images/page-18-pdf.png)
 
 ✅ Process the query  
 ✅ Understand the entire 23-page PDF visually  
@@ -24,8 +28,6 @@ The pipeline used a two-stage approach combining **ColQwen2** (`vidore/colqwen2-
 ## Results 
 
 The results were highly accurate, successfully identifying page 18 with the correct answer and extracting precise numbers:  
-
-![PDF Page with Answer](images/page-18-pdf.png)
 
 - **Total Runtime**: 454m 12s  
 
