@@ -1,9 +1,5 @@
 # 2-Stage Retrieval Pipeline using ColPali and Vision Language Model (VLM)
 
-Traditional document processing pipelines rely heavily on OCR → text extraction → language models. But what happens when we let multimodal AI directly "see" and interpret documents, like with ColPali?
-
-We often depend on OCR and Layout LLMs to extract information from PDFs and documents. But how effective are newer architecture models like ColPali?
-
 ## Experiment
 
 To test this, I provided a 23-page PDF and asked:  
@@ -16,16 +12,6 @@ The answer was embedded in visual charts on specific pages. For ColPali to answe
 ✅ Locate relevant charts/tables and extract precise numerical data  
 ✅ Identify the exact pages containing the answer  
 
-## Results
-
-The system performed impressively! 📊  
-
-It located the relevant data on **pages 18 and 19**, extracting detailed runtime metrics:  
-
-- **Evidence Extraction**: 61m 39s  
-- **LLM-generated Explanations**: 381m 31s  
-- **Total Runtime**: 454m 12s  
-
 ## Pipeline Overview
 
 The pipeline used a two-stage approach combining **ColQwen2** (`vidore/colqwen2-v0.1`) and **Qwen2.5-VL-3B-Instruct**:
@@ -35,11 +21,15 @@ The pipeline used a two-stage approach combining **ColQwen2** (`vidore/colqwen2-
 
 ![2-Stage Pipeline Diagram](images/pipeline-diagram.png)
 
-The results were highly accurate, successfully identifying pages 18–19 and extracting precise performance metrics:  
+## Results 
 
-- **Evidence Extraction**: 61m 39s  
-- **LLM-generated Explanations**: 381m 31s  
+The results were highly accurate, successfully identifying page 18 with the correct answer and extracting precise numbers:  
+
+![PDF Page with Answer](images/page-18-pdf.png)
+
 - **Total Runtime**: 454m 12s  
+
+![Terminal Result](images/page-18-terminal.png)
 
 It also provided exact page references for verification. 🎯
 
@@ -53,7 +43,7 @@ ColPali's foundation integrates:
 - A text encoder (ColBERT's multi-vector retrieval model)  
 - A vision-language model (recent versions use Qwen2.5-VL, which outperforms PaliGemma)  
 
-Learn more about ColPali: [arXiv:2407.01449](https://arxiv.org/abs/2407.01449)
+Learn more about ColPali [ICLR 2025]: [arXiv:2407.01449](https://arxiv.org/abs/2407.01449)
 
 ## Installation
 
